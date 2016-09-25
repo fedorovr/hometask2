@@ -32,6 +32,11 @@ fun shortSyntax() {
 
     // если у лямбды есть единственный аргумент, можно обращаться к нему через it:
     people.filter { it.age < 21 }
+
+    // если в теле лямбды просто вызывается метод или возвращается свойство (property),
+    // можно вместо лямбды использовать member reference:
+    people.map { it.name }
+    people.map(Person::name)
 }
 
 fun main(args: Array<String>) {
